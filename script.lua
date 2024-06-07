@@ -1,6 +1,6 @@
 local ai_text = get("input-content")
 local ai_result = get("ai-results")
-ai_result.set_content("Waiting...")
+print("Script loaded")
 
 -- URL Encode: https://smolkit.com/blog/posts/how-to-url-encode-in-lua/
 local function url_encode(str)
@@ -12,6 +12,7 @@ local function url_encode(str)
 end
 
 get("send-ai").on_click(function()
+  print("Sending resuest to the skibidi API")
   local response = fetch(
     url="https://skibidi.24a.fun/aigc/sparkdesk-v1.5?question=" .. url_encode(ai_text.get_content()),
     method="GET")
