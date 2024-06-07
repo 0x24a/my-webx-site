@@ -15,5 +15,5 @@ get("send-ai").on_click(function()
   local response = fetch(
     url="https://skibidi.24a.fun/aigc/sparkdesk-v1.5?question=" .. url_encode(ai_text.get_content()),
     method="GET")
-  ai_result.set_content(response)
+  ai_result.set_content(response["choices"][0]["message"]["content"])
 end)
