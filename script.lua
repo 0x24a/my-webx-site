@@ -18,5 +18,5 @@ get("send-ai").on_click(function()
     method="GET",
     headers={["Content-Type"] = "application/json"}})
   print(response)
-  ai_result.set_content(response["choices"][0]["message"]["content"])
+  ai_result.set_content(response["choices"][1]["message"]["content"])
 end)
